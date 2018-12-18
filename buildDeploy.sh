@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 #/bin/bash
 #build the site
 ng build --prod --aot
