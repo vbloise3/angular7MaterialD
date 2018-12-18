@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   users: Object;
 
   h1Style = false;
+  outputRegister = '';
 
   constructor(private data: DataService) { }
 
@@ -26,9 +27,8 @@ export class HomeComponent implements OnInit {
   firstClick() {
     this.data.registerUser()
       .subscribe(
-        data => console.log('success', data),
+        data => this.outputRegister = this.outputRegister = 'ID: ' + data.id + '; Created at: ' + data.createdAt, /*console.log('success', data),*/
         error => console.log('oops', error)
       );
   }
-
 }
