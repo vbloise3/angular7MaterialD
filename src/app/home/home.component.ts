@@ -27,8 +27,13 @@ export class HomeComponent implements OnInit {
   firstClick() {
     this.data.registerUser()
       .subscribe(
-        data => this.outputRegister = this.outputRegister = 'ID: ' + data.id + '; Created at: ' + data.createdAt, /*console.log('success', data),*/
+        data => this.outputRegister = this.outputRegister = 'ID: ' + (<RegisteredData>data).id + '; Created At: ' + (<RegisteredData>data).createdAt, /*console.log('success', data),*/
         error => console.log('oops', error)
       );
   }
+}
+
+class RegisteredData {
+  id: string;
+  createdAt: string;
 }
